@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Table View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TripPlannerApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="UITableViewController" customModule="TripPlannerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,6 +21,20 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="62M-w4-f3W">
                                 <rect key="frame" x="0.0" y="88" width="414" height="677"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="placeCell" id="9Oo-AY-dfz">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Oo-AY-dfz" id="NAI-29-XtX">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="V7N-3I-gne"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="qgC-zT-MCS"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HV3-Rr-gMs">
                                 <rect key="frame" x="80" y="832" width="254" height="30"/>
@@ -53,14 +67,68 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ySj-8s-f8D"/>
-                    <connections>
-                        <outlet property="table" destination="62M-w4-f3W" id="Juk-bY-8vz"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="ySj-8s-f8D">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="lhg-43-1e4">
+                            <connections>
+                                <segue destination="fGo-4R-fYE" kind="show" id="9y8-ge-C0T"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="112.5"/>
+        </scene>
+        <!--Edit View Controller-->
+        <scene sceneID="jGz-vm-9tF">
+            <objects>
+                <viewController storyboardIdentifier="EditViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fGo-4R-fYE" customClass="EditViewController" customModule="TripPlannerApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="07y-eF-bpM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRU-fp-jjq">
+                                <rect key="frame" x="20" y="812" width="374" height="30"/>
+                                <state key="normal" title="Add to Route"/>
+                                <connections>
+                                    <segue destination="xiY-yK-k7i" kind="unwind" unwindAction="doneWithSegue:" id="v7n-7M-55l"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a Stop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWa-Sq-Ded">
+                                <rect key="frame" x="20" y="721" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter address.." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F2Y-KF-6WC">
+                                <rect key="frame" x="20" y="762" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pmo-4G-FQU" firstAttribute="trailing" secondItem="F2Y-KF-6WC" secondAttribute="trailing" constant="20" id="0ZX-hu-JeT"/>
+                            <constraint firstItem="pmo-4G-FQU" firstAttribute="trailing" secondItem="gRU-fp-jjq" secondAttribute="trailing" constant="20" id="7zv-Mg-QbE"/>
+                            <constraint firstItem="F2Y-KF-6WC" firstAttribute="leading" secondItem="pmo-4G-FQU" secondAttribute="leading" constant="20" id="KUe-Dv-i9Z"/>
+                            <constraint firstItem="F2Y-KF-6WC" firstAttribute="top" secondItem="SWa-Sq-Ded" secondAttribute="bottom" constant="20" id="KVZ-Yw-RbL"/>
+                            <constraint firstItem="pmo-4G-FQU" firstAttribute="bottom" secondItem="gRU-fp-jjq" secondAttribute="bottom" constant="20" id="Vfa-fk-lA2"/>
+                            <constraint firstItem="pmo-4G-FQU" firstAttribute="trailing" secondItem="SWa-Sq-Ded" secondAttribute="trailing" constant="20" id="VnW-4q-R3W"/>
+                            <constraint firstItem="SWa-Sq-Ded" firstAttribute="leading" secondItem="pmo-4G-FQU" secondAttribute="leading" constant="20" id="s0k-kd-Ftu"/>
+                            <constraint firstItem="gRU-fp-jjq" firstAttribute="leading" secondItem="pmo-4G-FQU" secondAttribute="leading" constant="20" id="s1r-jH-shX"/>
+                            <constraint firstItem="gRU-fp-jjq" firstAttribute="top" secondItem="F2Y-KF-6WC" secondAttribute="bottom" constant="20" id="yjF-hi-OIj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pmo-4G-FQU"/>
+                    </view>
+                    <connections>
+                        <outlet property="newStop" destination="F2Y-KF-6WC" id="buf-mH-Uvs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xAd-em-OmG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="xiY-yK-k7i" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1828" y="113"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="38x-sh-5mT">
