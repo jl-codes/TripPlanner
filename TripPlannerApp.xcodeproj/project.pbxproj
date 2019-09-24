@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A0133523233935E40084EB7B /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0133521233935E40084EB7B /* TableViewCell.swift */; };
-		A0133524233935E40084EB7B /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0133522233935E40084EB7B /* TableViewCell.xib */; };
+		A0133526233945450084EB7B /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0133525233945450084EB7B /* EditViewController.swift */; };
 		A0E8B435233871DF0092F849 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E8B434233871DF0092F849 /* AppDelegate.swift */; };
 		A0E8B437233871DF0092F849 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E8B436233871DF0092F849 /* ViewController.swift */; };
 		A0E8B43A233871DF0092F849 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0E8B438233871DF0092F849 /* Main.storyboard */; };
@@ -38,8 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A0133521233935E40084EB7B /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		A0133522233935E40084EB7B /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		A0133525233945450084EB7B /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		A0E8B431233871DF0092F849 /* TripPlannerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripPlannerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0E8B434233871DF0092F849 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0E8B436233871DF0092F849 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -108,8 +106,7 @@
 				A0E8B434233871DF0092F849 /* AppDelegate.swift */,
 				A0E8B436233871DF0092F849 /* ViewController.swift */,
 				A0E8B438233871DF0092F849 /* Main.storyboard */,
-				A0133521233935E40084EB7B /* TableViewCell.swift */,
-				A0133522233935E40084EB7B /* TableViewCell.xib */,
+				A0133525233945450084EB7B /* EditViewController.swift */,
 				A0E8B465233873580092F849 /* LocationsModel.swift */,
 				A0E8B43E233871E10092F849 /* Assets.xcassets */,
 				A0E8B440233871E10092F849 /* LaunchScreen.storyboard */,
@@ -242,7 +239,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0E8B442233871E10092F849 /* LaunchScreen.storyboard in Resources */,
-				A0133524233935E40084EB7B /* TableViewCell.xib in Resources */,
 				A0E8B43F233871E10092F849 /* Assets.xcassets in Resources */,
 				A0E8B43A233871DF0092F849 /* Main.storyboard in Resources */,
 			);
@@ -269,8 +265,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0133523233935E40084EB7B /* TableViewCell.swift in Sources */,
 				A0E8B466233873580092F849 /* LocationsModel.swift in Sources */,
+				A0133526233945450084EB7B /* EditViewController.swift in Sources */,
 				A0E8B437233871DF0092F849 /* ViewController.swift in Sources */,
 				A0E8B43D233871DF0092F849 /* TripPlannerApp.xcdatamodeld in Sources */,
 				A0E8B435233871DF0092F849 /* AppDelegate.swift in Sources */,
